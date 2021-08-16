@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>add new region</h2>
+
+<form action="/regions" method="POST">
+    <div>
+        <label for="name">region name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

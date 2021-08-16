@@ -16,7 +16,7 @@ def munros():
 
 
 # ADD
-@munros_blueprint.route("/munros/new")
+@munros_blueprint.route("/munros/add")
 def add_munro():
     munros = munro_repository.select_all()
     regions = region_repository.select_all()

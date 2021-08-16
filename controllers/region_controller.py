@@ -2,6 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.region import Region
 import repositories.region_repository as region_repository
+import repositories.munro_repository as munro_repository
 
 regions_blueprint = Blueprint("regions", __name__)
 
