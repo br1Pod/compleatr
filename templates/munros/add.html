@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>add new munro</h2>
+
+<form action="/munros" method="POST">
+    <div>
+        <label for="name">munro name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

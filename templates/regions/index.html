@@ -3,7 +3,11 @@
 
 <h2>Regions</h2>
 
-<p>Region section landing page</p>>
+<p>Region section landing page</p>
 
-{% endfor %}
+    {% for region in regions %}
+    <p><a href="/regions/{{ region.id }}"> {{region.name}} </a></p>
+      
+    {% endfor %}
+
 {% endblock %}

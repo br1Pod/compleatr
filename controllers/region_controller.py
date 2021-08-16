@@ -17,3 +17,4 @@ def regions():
 @regions_blueprint.route("/regions/add")
 def add_region():
     return render_template("regions/add.html")
+

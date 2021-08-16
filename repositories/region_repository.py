@@ -8,3 +8,13 @@ def save(region):
     results = run_sql(sql, values)
     id = results[0]['id']
     region.id = id
+
+
+def select_all():
+    regions = []
+    sql = "SELECT * FROM regions"
+    results = run_sql(sql)
+    for row in results:
+        region = region(row['name'], row['id'])
+        regions.append(region)
+    return regions
