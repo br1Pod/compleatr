@@ -32,5 +32,12 @@ def edit_region(id):
     region = region_repository.select(id)
     return render_template('region/edit.html', region = region)
 
-# UPDATE
+
 # DEL
+@regions_blueprint.route("/regions/<id>/delete", methods=["POST"])
+def delete(id):
+    region_repository.delete(id)
+    return redirect("/regions")
+
+
+# UPDATE
