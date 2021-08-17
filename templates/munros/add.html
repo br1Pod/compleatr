@@ -3,12 +3,27 @@
 
 <h2>add new munro</h2>
 
-<form action="/munros" method="POST">
+<form action="/munros/" method="post">
+  
     <div>
-        <label for="name">munro name:</label>
-        <input type="text" id="name" name="name">
-        <input type="submit">
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name" value="{{munro.name}}" required autofocus>
+
+        <label for="height">height:</label>
+        <input type="text" id="height" name="height" value="{{munro.height}}" required>
+
+        <label for="climbed">climbed:</label>
+        <input type="checkbox" id="climbed" name="climbed" value="{{munro.climbed}}" required>
+
+        <label for="region">region:</label>
+        <input type="text" id="region" name="region" value="{{munro.region.name}}" required>
+        
     </div>
+
+  <button type="submit">add munro</button>
+
 </form>
 
 {% endblock %}
+
+

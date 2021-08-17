@@ -11,4 +11,30 @@
     {% endfor %}
 
 
+    <form action="/munros" method="post">
+  
+        <div>
+            <label for="name">name:</label>
+            <input type="text" id="name" name="name" required autofocus>
+    
+            <label for="height">height:</label>
+            <input type="text" id="height" name="height" required>
+    
+            <label for="climbed">climbed:</label>
+            <input type="checkbox" id="climbed" name="climbed">
+    
+            <label for="region">region:</label>
+            <select id="region" name="region">
+                {% for region in regions %}
+                <option value="{{ region.id}}">{{ region.name }}</option>  
+                {% endfor %}
+                
+            <input type="submit" value="add munro">
+        </div>
+    
+     
+    
+    </form>
+
+
 {% endblock %}

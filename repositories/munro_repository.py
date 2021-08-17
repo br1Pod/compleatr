@@ -44,7 +44,7 @@ def delete_all():
 
 def update(munro):
     sql = "UPDATE munros SET (name, height, climbed, region_id) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [munro.name, munro.height, munro.climbed, munro.region.id]
+    values = [munro.name, munro.height, munro.climbed, munro.region]
     print(values)
     run_sql(sql, values)
     
