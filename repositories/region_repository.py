@@ -45,3 +45,9 @@ def update(region):
     sql = "UPDATE regions SET (name) WHERE id = %s"
     values = [region.name]
     run_sql(sql, values)
+
+
+def delete(id):
+    sql = "DELETE FROM region WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
