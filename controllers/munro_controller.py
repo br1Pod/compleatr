@@ -43,3 +43,10 @@ def display_munro(id):
 def edit_munro(id):
     munro = munro_repository.select(id)
     return render_template('munros/edit.html', munro = munro)
+
+
+# DEL
+@munros_blueprint.route("/munros/<id>/delete", methods=["POST"])
+def delete(id):
+    munro_repository.delete(id)
+    return redirect("/munros")
