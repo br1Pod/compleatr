@@ -13,5 +13,5 @@ CREATE TABLE munros (
     name VARCHAR(255),
     height VARCHAR(255),
     climbed BOOLEAN,
-    regions_id INT REFERENCES regions(id)
+    region_id INT REFERENCES regions(id)
 );

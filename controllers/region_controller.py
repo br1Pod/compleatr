@@ -14,8 +14,9 @@ def regions():
 
 
 # ADD
-@regions_blueprint.route("/regions/add")
+@regions_blueprint.route("/regions/add", methods=["GET"])
 def add_region():
+    regions = region_repository.select_all()
     return render_template("regions/add.html")
 
 
