@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3>{{ munro.name }}</h3>
+    <dl>
+        <dt>Height : </dt>
+        <dd> {{ munro.height }}</dd>
+        <dt>Climbed ? :</dt>
+        <dd class = "{{ munro.climbed }}">&ofcir;</dd>
+    </dl>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati fugiat, quasi veniam possimus aliquid maiores</p>
+
+{% endblock %}

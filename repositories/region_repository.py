@@ -35,8 +35,10 @@ def select(id):
         region = Region(result['name'], result['id'] )
     return region
 
-    
+
 
 def delete_all():
     sql = "DELETE FROM regions"
     run_sql(sql)
+
+    

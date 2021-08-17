@@ -19,3 +19,11 @@ def add_region():
     return render_template("regions/add.html")
 
 
+
+# DISPLAY
+@regions_blueprint.route("/regions/<id>")
+def display_region(id):
+    region = region_repository.select(id)
+    return render_template("/regions/display.html", region = region)
+
+

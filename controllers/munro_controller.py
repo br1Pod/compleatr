@@ -21,3 +21,11 @@ def add_munro():
     munros = munro_repository.select_all()
     regions = region_repository.select_all()
     return render_template("munros/add.html", munros=munros, regions=regions)
+
+    
+
+# DISPLAY
+@munros_blueprint.route("/munros/<id>")
+def display_munro(id):
+    munro = munro_repository.select(id)
+    return render_template("/munros/display.html", munro = munro)

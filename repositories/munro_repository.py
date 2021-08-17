@@ -40,3 +40,12 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM munros"
     run_sql(sql)
+
+
+def update(munro):
+    sql = "UPDATE munros SET (name, height, climbed, region_id) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [munro.name, munro.height, munro.climbed, munro.region.id]
+    print(values)
+    run_sql(sql, values)
+    
+
