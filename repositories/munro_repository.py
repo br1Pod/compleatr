@@ -20,6 +20,23 @@ def select_all():
 
     for row in results:
         region = region_repository.select(row['region_id'])
-        munro = munro(row['name'], row['height'], row['climbed'], row['region']) 
+        munro = Munro(row['name'], row['height'], row['climbed'], region, row['id']) 
         munros.append(munro)
     return munros
+
+
+def select(id):
+    munro = None
+    sql = "SELECT * FROM munros WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        region = region_repository.select(result['region_id'])
+        munro = Munro(result['name'], result['height'], result['climbed'], region.id)
+    return munro
+
+
+def delete_all():
+    sql = "DELETE FROM munros"
+    run_sql(sql)
