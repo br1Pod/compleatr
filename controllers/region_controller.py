@@ -19,7 +19,6 @@ def add_region():
     return render_template("regions/add.html")
 
 
-
 # DISPLAY
 @regions_blueprint.route("/regions/<id>")
 def display_region(id):
@@ -27,3 +26,11 @@ def display_region(id):
     return render_template("/regions/display.html", region = region)
 
 
+# EDIT
+@regions_blueprint.route("/regions/<id>/edit")
+def edit_region(id):
+    region = region_repository.select(id)
+    return render_template('region/edit.html', region = region)
+
+# UPDATE
+# DEL
