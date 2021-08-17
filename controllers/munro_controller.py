@@ -30,8 +30,16 @@ def save_munro():
     munro_repository.save(munro)
     return redirect('/munros')    
 
+
 # DISPLAY
 @munros_blueprint.route("/munros/<id>")
 def display_munro(id):
     munro = munro_repository.select(id)
     return render_template("/munros/display.html", munro = munro)
+
+
+# EDIT
+@munros_blueprint.route("/munros/<id>/edit")
+def edit_munro(id):
+    munro = munro_repository.select(id)
+    return render_template('munros/edit.html', munro = munro)
