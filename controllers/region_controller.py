@@ -18,3 +18,4 @@ def regions():
 def add_region():
     return render_template("regions/add.html")
 
+

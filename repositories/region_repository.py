@@ -3,11 +3,15 @@ from models.region import Region
 
 
 def save(region):
-    sql = "INSERT INTO regions (name) VALUES (%s) RETURNING id"
+    sql = "INSERT INTO regions (name) VALUES (%s) RETURNING *"
     values = [region.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     region.id = id
+    return region
+
+
+ 
 
 
 def select_all():
