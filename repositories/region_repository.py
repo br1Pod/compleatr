@@ -42,8 +42,8 @@ def delete_all():
 
     
 def update(region):
-    sql = "UPDATE regions SET (name) WHERE id = %s"
-    values = [region.name]
+    sql = "UPDATE regions SET name = %s WHERE id = %s"
+    values = [region.name, region.id]
     run_sql(sql, values)
 
 

@@ -6,8 +6,21 @@
 <p>Region section landing page</p>
 
     {% for region in regions %}
-    <p><a href="/regions/{{ region.id }}"> {{region.name}} </a></p>
-      
+    <p>
+        <a href="/regions/{{ region.id }}"> {{region.name}} </a> &nbsp;
+        <a href= "/regions/{{ region.id }}/edit">- edit this region</a> &nbsp;
+    </p>
     {% endfor %}
+
+
+    <form action="/regions" method="POST">
+        <div>
+            <label for="name">add a region:</label>
+            <input type="text" id="name" name="name">
+            <input type="submit">
+        </div>
+    </form>
+
+
 
 {% endblock %}

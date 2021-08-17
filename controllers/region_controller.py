@@ -19,6 +19,15 @@ def add_region():
     return render_template("regions/add.html")
 
 
+# save
+@regions_blueprint.route("/regions", methods = ["POST"])
+def save_region():
+    name = request.form['name']
+    region = Region(name)
+    region_repository.save(region)
+    return redirect('/regions')
+
+
 # DISPLAY
 @regions_blueprint.route("/regions/<id>")
 def display_region(id):
@@ -30,7 +39,7 @@ def display_region(id):
 @regions_blueprint.route("/regions/<id>/edit")
 def edit_region(id):
     region = region_repository.select(id)
-    return render_template('region/edit.html', region = region)
+    return render_template('regions/edit.html', region = region)
 
 
 # DEL
@@ -41,11 +50,10 @@ def delete(id):
 
 
 # UPDATE
-@regions_blueprint.route("/regions/<id>", methods="POST")
+@regions_blueprint.route("/regions/<id>", methods=["POST"])
 def update_region(id):
     name = request.form['name']
-    region = region_repository.select(id)
-    region = region_repository.update(region)
+    region = Region(name, id)
     region_repository.update(region)
     return redirect("/regions")
 
