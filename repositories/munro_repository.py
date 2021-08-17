@@ -49,3 +49,8 @@ def update(munro):
     run_sql(sql, values)
     
 
+    
+def delete(id):
+    sql = "DELETE FROM munros WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
