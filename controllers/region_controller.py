@@ -41,3 +41,12 @@ def delete(id):
 
 
 # UPDATE
+@regions_blueprint.route("/regions/<id>", methods="POST")
+def update_region(id):
+    name = request.form['name']
+    region = region_repository.select(id)
+    region = region_repository.update(region)
+    region_repository.update(region)
+    return redirect("/regions")
+
+
