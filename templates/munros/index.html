@@ -5,5 +5,9 @@
 
 <p>Munro's section landing page</p>
 
+    {% for munro in munros %}
+    <p><a href = "/munros/{{ munro.id }}">{{munro.name}}</a></p>
+    {% endfor %}
+
 
 {% endblock %}
