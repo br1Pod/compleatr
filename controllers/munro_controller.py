@@ -25,7 +25,7 @@ def add_munro():
 def save_munro():
     name = request.form['name']
     height = request.form['height']
-    climbed = request.form['climbed']
+    climbed = False
     region_id = request.form['region']
     region = region_repository.select(region_id)
     munro = Munro(name, height, climbed, region)
