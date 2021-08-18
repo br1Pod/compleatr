@@ -10,7 +10,13 @@
     {% for munro in munros %}
     
     <li>{{munro.name}} &nbsp; ( {{munro.region.name}} ) &nbsp; 
-        <a href= "/munros/{{ munro.id }}/edit">- edit</a> &nbsp;</li>
+        <a href= "/munros/{{ munro.id }}/edit">- edit</a> &nbsp;
+
+        <form class="delete_munro" action="/munros/{{munro.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-times" aria-hidden="true"></i></button> 
+        </form>
+
+    </li>
         
     {% endfor %}
 
