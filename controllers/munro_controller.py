@@ -44,7 +44,8 @@ def display_munro(id):
 @munros_blueprint.route("/munros/<id>/edit")
 def edit_munro(id):
     munro = munro_repository.select(id)
-    return render_template('munros/edit.html', munro = munro)
+    regions = region_repository.select_all()
+    return render_template('munros/edit.html', munro = munro, regions = regions)
 
 
 # DEL
@@ -59,8 +60,9 @@ def delete(id):
 def update_munro(id):
     name = request.form['name']
     height = request.form['height']
-    climbed = request.form['climbed']
-    region = request.form['region']
-    munro = Munro(name, height, climbed, region)
+    climbed = True if request.form.get('climbed') else False
+    region_id = request.form['region']
+    region = region_repository.select(region_id)
+    munro = Munro(name, height, climbed, region, id)
     munro_repository.update(munro)
     return redirect("/munros")

@@ -2,6 +2,7 @@ from models.munro import Munro
 from models.region import Region
 import repositories.munro_repository as munro_repository
 import repositories.region_repository as region_repository
+import pdb
 
 munro_repository.delete_all()
 region_repository.delete_all()
@@ -18,6 +19,8 @@ munro_repository.save(munro2)
 
 region3 = Region("Skye Cuillin")
 region_repository.save(region3)
-munro3 = Munro("Sgùrr a Mhadaidh", "918 m", True, region3)
+munro3 = Munro("Sgùrr a Mhadaidh", "919m", True, region3)
 munro_repository.save(munro3)
 
+
+pdb.set_trace()

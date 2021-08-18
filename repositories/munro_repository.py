@@ -33,7 +33,7 @@ def select(id):
 
     if result is not None:
         region = region_repository.select(result['region_id'])
-        munro = Munro(result['name'], result['height'], result['climbed'], region.id)
+        munro = Munro(result['name'], result['height'], result['climbed'], region, id)
     return munro
 
 
@@ -44,8 +44,7 @@ def delete_all():
 
 def update(munro):
     sql = "UPDATE munros SET (name, height, climbed, region_id) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [munro.name, munro.height, munro.climbed, munro.region]
-    print(values)
+    values = [munro.name, munro.height, munro.climbed, munro.region.id, munro.id]
     run_sql(sql, values)
     
 

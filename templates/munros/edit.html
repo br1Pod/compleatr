@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% block nav_munro %}active{% endblock %}
 {% block content %}
 
 <form action="/munros/{{munro.id}}" method="post">
-  
+    <h3>edit this munro</h3>
     <div>
         <label for="name">name:</label>
         <input type="text" id="name" name="name" value="{{munro.name}}" required autofocus>
@@ -11,10 +12,19 @@
         <input type="text" id="height" name="height" value="{{munro.height}}" required>
 
         <label for="climbed">climbed:</label>
-        <input type="checkbox" id="climbed" name="climbed" value="{{munro.climbed}}" required>
+        <input type="checkbox" id="climbed" name="climbed" value="{{munro.climbed}}">
 
         <label for="region">region:</label>
-        <input type="text" id="region" name="region" value="{{munro.region.name}}" required>
+
+        <select id="region" name="region">
+          {% for region in regions %}
+
+          <option value="{{ region.id}}" 
+            {% if region.id == munro.region.id %} selected = "selected" {% endif %}>{{ region.name }}</option>  
+          {% endfor %}
+        </select>   
+
+
     </div>
 
   <button type="submit">update munro</button>
