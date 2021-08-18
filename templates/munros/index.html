@@ -10,12 +10,12 @@
     {% for munro in munros %}
     
     <li>{{munro.name}} &nbsp; ( {{munro.region.name}} ) &nbsp; 
-        <a href= "/munros/{{ munro.id }}/edit"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" style="color:darkred"></i></a>
+        <a href= "/munros/{{ munro.id }}/edit"><i class="fa fa-pencil-square-o fa-2x" title="edit" aria-hidden="true" style="color:darkred"></i></a>
 
         <form class="delete_munro" action="/munros/{{munro.id}}/delete" method="POST">
             <button class="trash-button" title="delete"><i class="fa fa-times fa-2x" aria-hidden="true" style="color:darkred"></i></button> 
         </form>
-
+        {% if munro.climbed == True %}&nbsp; <i class="fa fa-check fa-lg" title="climbed" aria-hidden="true" style="color:darkgreen"></i>{% endif %}
     </li>
         
     {% endfor %}
@@ -31,10 +31,10 @@
     
             <label for="height">height:</label>
             <input type="text" id="height" name="height" required>
-    
-            <label class="hidden" for="climbed">climbed:</label>
-            <input class = "hidden" type="checkbox" id="climbed" name="climbed">
-    
+            <p id = "tick-off">climbed:
+                <label class = "hidden" for="climbed">climbed:</label>
+                <input type="checkbox" id="climbed" name="climbed">
+            </p>
             <label for="region">region:</label>
             <select id="region" name="region">
                 {% for region in regions %}
