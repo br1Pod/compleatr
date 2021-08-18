@@ -9,7 +9,7 @@
     {% for region in regions %}
         <li>
             {{region.name}} &nbsp;
-            <a href= "/regions/{{ region.id }}/edit" class="right">- edit this region</a> &nbsp;
+            <a href= "/regions/{{ region.id }}/edit" title="edit" class="right"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" style="color:darkred"></i></a> &nbsp;
         </li>
         {% endfor %}
     </ul>

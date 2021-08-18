@@ -24,7 +24,7 @@
 </section>
     
     <form action="/munros" method="post">
-        <h3>add a new munro</h3>
+        <h4>add new</h4>
         <div>
             <label for="name">name:</label>
             <input type="text" id="name" name="name" required autofocus>
@@ -41,7 +41,7 @@
                 <option value="{{ region.id}}">{{ region.name }}</option>  
                 {% endfor %}
             </select>    
-            <input id = "submit" type="submit" value="add munro">
+            <input id = "submit" type="submit" value="add">
         </div>
     
      
