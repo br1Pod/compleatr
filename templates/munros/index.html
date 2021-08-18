@@ -4,16 +4,18 @@
 
 <h3>Munro's</h3>
 
-<p>Munro's section landing page</p>
+<section>
+    <ul id="munrolist">
 
     {% for munro in munros %}
     
-    <p><a href = "/munros/{{ munro.id }}">{{munro.name}}</a> &nbsp; ( {{munro.region.name}} ) &nbsp; 
-        <a href= "/munros/{{ munro.id }}/edit">- edit this munro</a> &nbsp;</p>
+    <li>{{munro.name}} &nbsp; ( {{munro.region.name}} ) &nbsp; 
+        <a href= "/munros/{{ munro.id }}/edit">- edit</a> &nbsp;</li>
         
-        <hr>
     {% endfor %}
 
+    </ul>
+</section>
     
     <form action="/munros" method="post">
         <h3>add a new munro</h3>
@@ -33,7 +35,7 @@
                 <option value="{{ region.id}}">{{ region.name }}</option>  
                 {% endfor %}
             </select>    
-            <input type="submit" value="add munro">
+            <input id = "submit" type="submit" value="add munro">
         </div>
     
      
