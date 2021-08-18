@@ -57,6 +57,21 @@ input[type=submit]:hover {
     clear: both;
 }
 
+#addreg label{
+    color:#444;
+    font-size: 16px;
+}
+
+#addreg input{
+    margin-bottom: 10px;
+    border: 1px solid darkgreen;
+}
+
+#addreg #submit, 
+button #submit {
+    width: 20%;
+}
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
 .col-25, .col-75, input[type=submit] {

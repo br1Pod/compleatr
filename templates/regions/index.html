@@ -4,21 +4,22 @@
 
 <h3>Regions</h3>
 
-<p>Region section landing page</p>
-
+<section>
+    <ul>
     {% for region in regions %}
-    <p>
-        <a href="/regions/{{ region.id }}"> {{region.name}} </a> &nbsp;
-        <a href= "/regions/{{ region.id }}/edit">- edit this region</a> &nbsp;
-    </p>
-    {% endfor %}
+        <li>
+            {{region.name}} &nbsp;
+            <a href= "/regions/{{ region.id }}/edit" class="right">- edit this region</a> &nbsp;
+        </li>
+        {% endfor %}
+    </ul>
+</section>
 
-
-    <form action="/regions" method="POST">
+    <form id ="addreg" action="/regions" method="POST">
         <div>
             <label for="name">add a region:</label>
             <input type="text" id="name" name="name">
-            <input type="submit">
+            <input id = "submit" type="submit">
         </div>
     </form>
 

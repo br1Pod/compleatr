@@ -18,15 +18,21 @@ body {
 
 header{
     border-bottom: 2px solid #444;
-    
 }
 
+header h1 {
+    padding: 10px 0 20px;
+    box-shadow: 1px 5px 10px #444
+}
+header h2 {
+    padding: 10px;
+}
 article {
     text-align: center;
 }
 
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -37,11 +43,11 @@ ul {
     width: 100%;
   }
   
-  li {
+  nav ul li {
     float: left;
   }
   
-  li a {
+  nav ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -49,7 +55,7 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover {
+  nav ul li a:hover {
     background-color: #111;
   }
 
@@ -83,6 +89,38 @@ ul {
     margin: 50px;
   }
 
-  footer p {
+footer p {
       margin-top: 80px;
-  }
+}
+
+article ul {
+    width: 500px;
+    margin: 10px auto;
+    display: block;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+article ul li{
+    display: block;
+    height: 65px;
+    margin-bottom: 10px;
+    border-top: 1px solid darkgreen;
+    border-right: 1px solid darkgreen;
+    border-bottom: 1px solid darkgreen;
+    border-left: 30px solid darkgreen;
+    background: whitesmoke;
+    padding:20px;
+    margin-bottom: 10px;
+    color: darkgreen;
+    font-size: 25px;
+}
+
+article ul li a{
+    text-decoration: none;
+    color: darkgreen;
+    font-size: 18px;
+    padding: 10px;
+    width: 90%;
+    max-width:500px;
+}
