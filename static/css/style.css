@@ -68,17 +68,19 @@ nav ul {
 
   #branding {
       margin: 50px 16px 0;
-      font-size: 32px;
+      font-size: 40px;
       color: darkgreen;
       text-align: center;
       background-color: white;
   }
 
   #strapline {
-      margin: 10px 16px;
-      font-size: 16px;
-      color: #444;
-      text-align: center;
+    margin: 10px 16px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    background: darkred;
+    padding-bottom:10px;
   }
   
   footer {
