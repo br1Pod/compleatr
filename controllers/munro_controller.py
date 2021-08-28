@@ -60,7 +60,9 @@ def delete(id):
 def update_munro(id):
     name = request.form['name']
     height = request.form['height']
+
     climbed = True if request.form.get('climbed') else False
+    
     region_id = request.form['region']
     region = region_repository.select(region_id)
     munro = Munro(name, height, climbed, region, id)

@@ -3,7 +3,7 @@
 {% block content %}
 
 <form action="/munros/{{munro.id}}" method="post">
-    <h3>edit this munro</h3>
+    <h4>edit</h4>
     <div>
         <label for="name">name:</label>
         <input type="text" id="name" name="name" value="{{munro.name}}" required autofocus>
@@ -11,23 +11,22 @@
         <label for="height">height:</label>
         <input type="text" id="height" name="height" value="{{munro.height}}" required>
 
-        <label for="climbed">climbed:</label>
-        <input type="checkbox" id="climbed" name="climbed" value="{{munro.climbed}}">
-        <br>
+        <p id = "tick-off">climbed:
+          <label class = "hidden" for="climbed">climbed:</label>
+          <input type="checkbox" id="climbed" name="climbed">
+        </p>
+      
         <label for="region">region:</label>
 
         <select id="region" name="region">
           {% for region in regions %}
 
-          <option value="{{ region.id}}" 
+          <option value="{{ region.id }}" 
             {% if region.id == munro.region.id %} selected = "selected" {% endif %}>{{ region.name }}</option>  
           {% endfor %}
         </select>   
-
-
-    </div>
-
-  <button type="submit">update munro</button>
+     </div>
+     <input id = "submit" type="submit" value="submit">
 
 </form>
 

@@ -2,6 +2,13 @@
 {% block nav_home %}active{% endblock %}
 {% block content %}
 
-home page content goes in here. 
+<ul>
+{% for munro in munros %}
+	{% if munro.climbed == True %}<li>{{munro.name}} &nbsp; ( {{munro.region.name}} ) &nbsp; 
+        <a href= "/munros/{{ munro.id }}/edit"><i class="fa fa-pencil-square-o fa-2x" title="edit" aria-hidden="true" style="color:darkred"></i></a></li>
+    {% endif %}
+</ul>
+{% endfor %}
 
 {% endblock %}
+
