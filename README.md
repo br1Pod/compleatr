@@ -37,7 +37,7 @@ Allows the user to ...
 <hr>
 
 <h3>How To Use</h3>
-To clone and run this application, you'll need Git and Node.js (which comes with npm) installed on your computer. From your command line:
+To clone and run this application, you'll need Git installed on your computer. From your command line:
 
 # Clone this repository
 $ git clone https://github.com/br1Pod/compleatr.git
